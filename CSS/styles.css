@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    /* text-decoration: blue underline solid; */
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-family: papyrus;
+}
+
+h2 {
+
+}
+
+button {
+
+}
+
+p {
+    text-align: justify;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    
+}

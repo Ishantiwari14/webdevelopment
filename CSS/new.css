@@ -1,0 +1,22 @@
+h2 {
+    background-color: lightcyan;
+    border: solid;
+    display: inline;
+}
+
+span {
+    border: solid;
+    background-color: lightgreen;
+    display: inline-block;
+    width: 400px;
+    height: 200px;
+
+}
+
+div {
+    background-color: lightgreen;
+    width: 250px;
+    height: 200px;
+    border:solid;
+    display: inline-block;
+}
