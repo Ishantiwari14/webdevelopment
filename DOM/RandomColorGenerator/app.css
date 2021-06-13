@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    font-size: 5em;
+}
+
+
+div {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+button {
+    display: block;
+    border-radius: 0.5em;
+    padding: 1em;
+    border-style: solid;
+    font-size: 1em;
+    
+}
+
+.dark {
+    color: white;
+}
