@@ -1,0 +1,20 @@
+div {
+    display: inline-block;
+}
+
+img {
+    display: block;
+}
+
+.pokemon span {
+    display: none;
+}
+
+.pokemon:hover span{
+    
+    display: inline-block;
+    text-align: center;
+    color:brown;
+    border: 1px solid bisque;
+    
+}

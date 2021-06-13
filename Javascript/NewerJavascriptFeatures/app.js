@@ -35,3 +35,36 @@ function sum(...nums) {
     return nums.reduce((total, el) => total + el)
 }
 
+const scores = [1, 23, 45, 65, 76, 87]
+
+const highscore = scores[0];
+const secondHighScore = scores[1];
+
+const [gold, silver, bronze, ...everyoneElse] = scores;
+
+console.log(`gold is ${gold}`)
+console.log(`silver is ${silver}`)
+console.log(...everyoneElse)
+
+
+const user = {
+    email: 'harvey@gmail.com',
+    password: 'scothishn34',
+    firstName: 'harvey',
+    lastName: 'Milk',
+    born: 1920,
+    died: 1798,
+    bio: 'Hahahahahah',
+    city: 'world',
+    state: 'mostly solid & liquid'
+}
+
+const { email, firstName, lastName, bio } = user;
+
+const { born: birthYear, died: deathYear } = user;
+
+const anotherUser = { ...user }
+
+function fullName(user) {
+    return `${user.firstName} ${user.lastName}`
+}
