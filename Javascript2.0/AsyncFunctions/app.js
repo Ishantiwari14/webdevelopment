@@ -15,7 +15,7 @@
 //         console.log(data)
 //     })
 
-const login = async (password, username) => {
+const login = (password, username) => {
     if (!username || !password) throw 'Missing Credentials'
     if (password === 'cargimorgenthau') return 'Logged IN!'
     throw 'Invalid Password'
