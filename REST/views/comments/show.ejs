@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <%  for(let c of comments) {  %> 
+    
+    <%   if(c.id === id){  %>
+        <h1>Comment id: <%= c.id %> </h1>
+        <li><%= c.comment %>  - <b> <%= c.username %> </b> </li>    
+        <a href="/comments">Back to index</a>
+    <% } %>     
+    <% } %> 
+</body>
+</html>
