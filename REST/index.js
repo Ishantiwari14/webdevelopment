@@ -1,16 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodooverride = require('method-override')
+
+
 const { v4: uuid } = require('uuid');
 uuid();
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json())
-
+app.use(methodooverride('_method'));
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));
 
-const comments = [
+let comments = [
 	{
 		id: uuid(),
 		username: 'Todd',
@@ -55,9 +58,37 @@ app.get('/comments/:id', (req, res) => {
 	res.render('comments/show', {id, comments})
 })
 
+app.get('/comments/:id/edit', (req, res) => {
+	const {id} = req.params;
+	const comment = comments.find(c => c.id === id);
+	res.render('comments/edit', {comment});
+	res.redirect('/comments')
+
+})
+
+app.delete('/comments/:id', (req, res) => {
+	const {id} = req.params;
+	comments = comments.filter(c => c.id !== id)
+	res.redirect('/comments')
+
+})
+
+app.patch('/comments/:id', (req, res) => {
+	const {id} = req.params;
+	const newCommentText = req.body.comment;
+	const foundComment = comments.find(c => c.id === id);
+	foundComment.comment += newCommentText;
+	res.redirect('/comments')
+
+	// res.send("all good!!")
+	// const comment = comments.find(c => c.id === id);
+	
+	// res.send('Updating someting')
+})
+
 // app.get('/tacos', (req, res) => {
 // 	console.log(req.query);
-// 	res.send("GET /tacos response.")
+// 	res.send("GET /tacos resp  onse.")
 // })
 
 // app.post('/tacos', (req, res) => {
